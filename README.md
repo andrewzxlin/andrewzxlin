@@ -11,6 +11,7 @@
 | RAG 與引用來源 | Agent 回答問題時需要能查資料、附來源、信心不足時拒絕亂答 | [rag-knowledgebase-evals](https://github.com/andrewzxlin/rag-knowledgebase-evals) |
 | Code-aware analysis | Agent 不能只處理自然語言，也要能讀 diff、找風險、產生結構化建議 | [repo-pr-review-agent](https://github.com/andrewzxlin/repo-pr-review-agent) |
 | Observability | 多步 agent workflow 需要 trace、latency、tokens、cost、failure analysis | [agent-observability-dashboard](https://github.com/andrewzxlin/agent-observability-dashboard) |
+| Workflow orchestration | 多步任務需要依賴順序、retry、approval gate、failure propagation | [workflow-action-runner](https://github.com/andrewzxlin/workflow-action-runner) |
 
 ## Featured Projects
 
@@ -21,6 +22,7 @@
 | RAG Knowledge Base with Evals | 讀取知識庫、retrieval、附 citations，並測低信心拒答 | [rag-knowledgebase-evals](https://github.com/andrewzxlin/rag-knowledgebase-evals) |
 | Repo PR Review Agent | 讀 unified diff，找出 secret、XSS、吞錯、destructive SQL 等風險 | [repo-pr-review-agent](https://github.com/andrewzxlin/repo-pr-review-agent) |
 | Agent Observability Dashboard | 讀 JSONL traces，整理 latency、tokens、cost、failure states 與改善建議 | [agent-observability-dashboard](https://github.com/andrewzxlin/agent-observability-dashboard) |
+| Workflow Action Runner | 讀 JSON workflow，依依賴順序執行 steps，支援 retry 與 human approval gate | [workflow-action-runner](https://github.com/andrewzxlin/workflow-action-runner) |
 
 ## 設計原則
 
