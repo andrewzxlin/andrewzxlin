@@ -1,53 +1,42 @@
 # Andrew Lin
 
-我正在建立一組面向 **Agentic Workflow / LLM Engineering / AI Automation** 的作品集。重點不是做單一 chatbot，而是展示如何把 LLM 接進可驗證、可觀測、可審核的工作流。
+我正在建立一組 **Agentic Workflow / LLM Engineering / AI Automation** 實驗專案。重點不是做單一 chatbot，而是把 LLM 系統拆成可觀察、可測試、可審核、可延伸的工作流。
 
-## Portfolio Focus
+## 這組專案在補哪張學習拼圖
 
-- Agentic workflow orchestration
-- Tool use / routing / structured output
-- RAG、citations、confidence、evals
-- Guardrails 與 human-in-the-loop
-- Code-aware review agents
-- Observability：traces、latency、tokens、cost、failure states
+| 拼圖 | 為什麼重要 | 對應專案 |
+|---|---|---|
+| 任務拆解與流程編排 | Agent 不該只是一段 prompt，而要能把複雜任務拆成明確步驟 | [agentic-idea-validator](https://github.com/andrewzxlin/agentic-idea-validator) |
+| Routing 與安全邊界 | 真實 workflow 需要根據輸入走不同路徑，也需要 guardrails | [customer-reply-agent](https://github.com/andrewzxlin/customer-reply-agent) |
+| RAG 與引用來源 | Agent 回答問題時需要能查資料、附來源、信心不足時拒絕亂答 | [rag-knowledgebase-evals](https://github.com/andrewzxlin/rag-knowledgebase-evals) |
+| Code-aware analysis | Agent 不能只處理自然語言，也要能讀 diff、找風險、產生結構化建議 | [repo-pr-review-agent](https://github.com/andrewzxlin/repo-pr-review-agent) |
+| Observability | 多步 agent workflow 需要 trace、latency、tokens、cost、failure analysis | [agent-observability-dashboard](https://github.com/andrewzxlin/agent-observability-dashboard) |
 
 ## Featured Projects
 
-| 專案 | 展示能力 | Repo |
+| 專案 | 它能做什麼 | Repo |
 |---|---|---|
-| Agentic Idea Validator | startup idea 拆解、競品 mapping、risk critic、scoring、7 天驗證計畫 | [agentic-idea-validator](https://github.com/andrewzxlin/agentic-idea-validator) |
-| Customer Reply Agent | intent routing、evidence timeline、guardrails、human approval package | [customer-reply-agent](https://github.com/andrewzxlin/customer-reply-agent) |
-| RAG Knowledge Base with Evals | ingestion、chunking、retrieval、citations、confidence、low-confidence fallback、evals | [rag-knowledgebase-evals](https://github.com/andrewzxlin/rag-knowledgebase-evals) |
-| Repo PR Review Agent | unified diff parsing、code-aware risk detection、structured findings、test suggestions | [repo-pr-review-agent](https://github.com/andrewzxlin/repo-pr-review-agent) |
-| Agent Observability Dashboard | JSONL traces、run/step metrics、latency、tokens、cost estimate、failure analysis、HTML report | [agent-observability-dashboard](https://github.com/andrewzxlin/agent-observability-dashboard) |
+| Agentic Idea Validator | 把一個模糊 idea 拆成競品、風險、評分與 7 天驗證計畫 | [agentic-idea-validator](https://github.com/andrewzxlin/agentic-idea-validator) |
+| Customer Reply Agent | 把客服/退款/帳單紀錄整理成證據時間線、guardrails 與回覆草稿 | [customer-reply-agent](https://github.com/andrewzxlin/customer-reply-agent) |
+| RAG Knowledge Base with Evals | 讀取知識庫、retrieval、附 citations，並測低信心拒答 | [rag-knowledgebase-evals](https://github.com/andrewzxlin/rag-knowledgebase-evals) |
+| Repo PR Review Agent | 讀 unified diff，找出 secret、XSS、吞錯、destructive SQL 等風險 | [repo-pr-review-agent](https://github.com/andrewzxlin/repo-pr-review-agent) |
+| Agent Observability Dashboard | 讀 JSONL traces，整理 latency、tokens、cost、failure states 與改善建議 | [agent-observability-dashboard](https://github.com/andrewzxlin/agent-observability-dashboard) |
 
-## Engineering Principles
+## 設計原則
 
-這些作品刻意先採用 deterministic workflow，而不是一開始就依賴外部 LLM API。原因是：
+這些專案刻意先採用 deterministic workflow，而不是一開始就依賴外部 LLM API。原因是：
 
 1. 可以本機直接跑 demo 和測試。
 2. 每個 workflow step 都能被單獨檢查。
 3. eval cases 可以穩定驗證，不會因模型輸出波動而失真。
 4. 之後可以把 deterministic step 替換成 OpenAI、Anthropic、LangGraph 或 Agents SDK。
 
-每個專案都包含中文 README、中文架構文件、可重現 CLI demo 與 regression tests。
+每個專案都包含中文 README、中文架構文件、可重現 CLI demo、regression tests 與 GitHub Actions CI。
 
-## What I Am Building Toward
-
-我想把自己定位成：
-
-> Full-stack / AI Engineer focused on agentic workflows, LLM evaluation, RAG, guardrails, and production automation.
-
-下一步會補強：
+## 下一步
 
 - OpenAI Agents SDK / LangGraph integration
-- GitHub Actions / CI demos
+- GitHub Actions / CI demos 的進一步自動化
 - OpenTelemetry 或 AgentOps 類 observability
 - 更完整的 eval suites
 - Web UI demos
-
-## Resume Bullets
-
-- Built multiple agentic workflow projects covering market research, customer support drafting, RAG retrieval, PR review, and observability.
-- Designed deterministic eval suites for routing, retrieval quality, guardrails, risk detection, and trace aggregation.
-- Implemented portfolio projects with Chinese documentation, reproducible CLI demos, structured outputs, and GitHub-ready READMEs.
